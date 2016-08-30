@@ -5,8 +5,8 @@
 new Vue({
   el: '#app',
   data: {
-    time: 10,
-    initial: 10,
+    time: 1500,
+    initial: 1500,
     started: false,
     breaktime: false
   },
@@ -39,15 +39,15 @@ new Vue({
         if (this.time === 0 && this.breaktime === false) {
           this.started = false;
           this.breaktime = true;
-          this.time = 5;
-          this.initial = 5;
+          this.time = 300;
+          this.initial = 300;
           beeps.play();
           clearInterval(this.interval);
         } else if (this.time === 0 && this.breaktime === true) {
           this.started = false;
           this.breaktime = false;
-          this.time = 10;
-          this.initial = 10;
+          this.time = 1500;
+          this.initial = 1500;
           beeps.play();
           clearInterval(this.interval);
         }
