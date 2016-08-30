@@ -1,0 +1,17 @@
+Pomodoro App
+=======
+*Read this in other languages: [English](README.md), [Português - BR](README.pt-br.md).*
+
+A minimal [Pomodore technique](https://en.wikipedia.org/wiki/Pomodoro_Technique) application to help you control your focus.
+
+![](pomodoro-app.gif)
+
+## Contributing
+1. Fork it (https://github.com/ftonato/pomodoro-app/fork)
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create a new Pull Request
+
+## License
+Code licensed under an [MIT-style License](LICENSE.md).

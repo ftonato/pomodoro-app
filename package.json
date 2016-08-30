@@ -1,0 +1,22 @@
+{
+  "name": "Pomodoro-app",
+  "version": "1.0.0",
+  "description": "A minimal Pomodore technique application to help you control your focus.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ftonato/pomodoro-app.git"
+  },
+  "author": "Ademílson F. Tonato",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ftonato/pomodoro-app/issues"
+  },
+  "homepage": "https://github.com/ftonato/pomodoro-app/#readme",
+  "devDependencies": {
+    "electron-prebuilt": "^0.37.4"
+  }  
+}

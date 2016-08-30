@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pomodoro App</title>
+
+  <meta property="og:url" content="https://github.com/ftonato/pomodoro-app">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Pomodoro App">
+  <meta property="og:description" content="Hey there, I am using Pomodoro App to help me control my focus.">
+  <meta property="og:image" content="https://avatars0.githubusercontent.com/u/5417662?v=3&s=400">
+
+  <link rel="image_src" href="https://avatars0.githubusercontent.com/u/5417662?v=3&s=400">
+  <link href='https://fonts.googleapis.com/css?family=Kanit:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="https://s3-us-west-2.amazonaws.com/jbivenscp/bitzy.min.css">
+  <link rel="stylesheet" href="src/css/main.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.20/vue.min.js"></script>
+</head>
+
+<body>
+  <div id="app">
+
+    <div class="column-3"></div>
+
+    <div class="column-6 text-center">
+      <div class="timer">
+        <h1 class="title" v-show="!breaktime">Pomodoro App</h1>
+        <h1 class="title" v-show="breaktime">Breaktime!</h1>
+        
+        <div>
+          <h1 class="title">{{ time | minutesAndSeconds }}</h1>
+          <button @click="start" v-show="!started" class="primary button">Start</button>
+          <button @click="pause" v-show="started" class="stop button">Pause</button>
+          
+          <div class="shell" v-bind:class="{ 'break': breaktime }">
+            <div class="progressbar" v-show="!breaktime" :style="{ width: time / initial * 100 + '%' }"></div>
+            <div class="progressbar" v-show="breaktime" :style="{ width: time / initial * 100 + '%', background: 'lightgreen' }"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Share and help us spread the word. -->
+  <footer class="footer column-12 text-center">
+    <a class="social_icon twitter" href="https://twitter.com/intent/tweet?text=Hey there, I am using Pomodoro App to help me control my focus.&amp;url=https://github.com/ftonato/pomodoro-app&amp;related=ftonato" rel="nofollow" title="Share on Twitter"></a>
+    <a class="social_icon facebook" href="https://facebook.com/sharer.php?u=https://github.com/ftonato/pomodoro-app/" rel="nofollow" title="Share on Facebook"></a>
+  </footer>
+
+  <script src="src/js/timer.js"></script>
+  <script src="src/js/share.js"></script>
+</body>
+
+</html>
