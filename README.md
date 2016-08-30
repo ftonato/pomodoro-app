@@ -8,7 +8,7 @@ A minimal [Pomodore technique](https://en.wikipedia.org/wiki/Pomodoro_Technique)
 
 ## Contributing
 1. [Follow this guide](CONTRIBUTING.md)
-2. [Fork it](https://github.com/ftonato/pomodoro-app/fork)
+2. Fork it: (https://github.com/ftonato/pomodoro-app/)
 3. Create your feature branch: `git checkout -b my-new-feature`
 4. Commit your changes: `git commit -am 'Add some feature'`
 5. Push to the branch: `git push origin my-new-feature`
