@@ -2,13 +2,17 @@
 /*eslint no-undef: "error"*/
 /*eslint-env browser*/
 
+const notifier = require('node-notifier');
+const path = require('path');
+
 new Vue({
   el: '#app',
   data: {
     time: 1500,
     initial: 1500,
     started: false,
-    breaktime: false
+    breaktime: false,
+    message: ['Pomodoro Complete', 'Breaktime Complete']
   },
   filters: {
     minutesAndSeconds() {
@@ -41,6 +45,7 @@ new Vue({
           this.breaktime = true;
           this.time = 300;
           this.initial = 300;
+          this.showNotification(true);
           beeps.play();
           clearInterval(this.interval);
         } else if (this.time === 0 && this.breaktime === true) {
@@ -48,6 +53,7 @@ new Vue({
           this.breaktime = false;
           this.time = 1500;
           this.initial = 1500;
+          this.showNotification(false);
           beeps.play();
           clearInterval(this.interval);
         }
@@ -57,6 +63,17 @@ new Vue({
     pause() {
       clearInterval(this.interval);
       this.started = false;
+    },
+
+    showNotification: function(complete) {
+      let message = complete ? this.message[0] : this.message[1];
+
+      notifier.notify({
+        'title': 'Pomodoro App',
+        'message': '\n'+message,
+        'icon': path.join(__dirname, 'atom.png'),
+        'time': 3000,
+      });
     }
   }
 
