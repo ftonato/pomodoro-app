@@ -1,6 +1,6 @@
 {
   "name": "Pomodoro-App",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A minimal Pomodore technique application to help you control your focus.",
   "main": "main.js",
   "scripts": {
@@ -17,7 +17,14 @@
   },
   "homepage": "https://github.com/ftonato/pomodoro-app/#readme",
   "devDependencies": {
-    "electron-prebuilt": "^0.37.4"
+    "electron-prebuilt": "^0.37.4",
+    "google-closure-compiler-js": "^20160828.0.1",
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-rename": "^1.2.2",
+    "jshint": "^2.9.3",
+    "vinyl": "^1.2.0"
   },
   "dependencies": {
     "node-notifier": "^4.6.1"
