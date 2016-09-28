@@ -17,4 +17,4 @@ Uma simples aplicação da [técnica Pomodoro](https://en.wikipedia.org/wiki/Pom
 6. Crie um novo _Pull Request_
 
 ## Licença
-Código licenciado sob a [MIT-style License](LICENSE.md).
+Código licenciado sob a [MIT-style License](LICENSE).
