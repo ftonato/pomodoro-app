@@ -37,7 +37,7 @@ new Vue({
   methods: {
     start() {
       let beeps = new Audio('endbeep.wav');
-      
+
       this.interval = setInterval(() => {
         this.time -= 1;
         if (this.time === 0 && this.breaktime === false) {
@@ -71,7 +71,7 @@ new Vue({
       notifier.notify({
         'title': 'Pomodoro App',
         'message': '\n'+message,
-        'icon': path.join(__dirname, 'atom.png'),
+        'icon': path.join(__dirname, 'pomodoro-app-icon.png'),
         'time': 3000,
       });
     }
