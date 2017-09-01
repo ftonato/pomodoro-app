@@ -8,8 +8,8 @@ const path = require('path');
 new Vue({
   el: '#app',
   data: {
-    time: 10,
-    initial: 10,
+    time: 1500,
+    initial: 1500,
     started: false,
     breaktime: false,
     message: ['Pomodoro Complete', 'Breaktime Complete']
@@ -82,8 +82,8 @@ new Vue({
         } else if (this.time === 0 && this.breaktime === true) {
           this.started = false;
           this.breaktime = false;
-          this.time = 10;
-          this.initial = 10;
+          this.time = 1500;
+          this.initial = 1500;
           this.showNotification(false);
           beeps.play();
           clearInterval(this.interval);
