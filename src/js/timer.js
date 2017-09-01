@@ -8,11 +8,42 @@ const path = require('path');
 new Vue({
   el: '#app',
   data: {
-    time: 1500,
-    initial: 1500,
+    time: 10,
+    initial: 10,
     started: false,
     breaktime: false,
     message: ['Pomodoro Complete', 'Breaktime Complete']
+  },
+  ready() {
+    let self = this;
+    window.addEventListener('keyup', function(evt) {
+      evt = evt || window.event;
+      if (evt.ctrlKey && evt.keyCode == 82) {
+        self.pause();
+      }
+      if (evt.ctrlKey && evt.keyCode == 83) {
+        self.start();
+      }
+      if (evt.ctrlKey && evt.keyCode == 49) {
+        if (self.enableTimer()) {
+          self.time = 300;
+          self.initial = 300;
+        }
+      }
+      if (evt.ctrlKey && evt.keyCode == 50) {
+        if (self.enableTimer()) {
+          self.time = 600;
+          self.initial = 600;
+        }
+      }
+      if (evt.ctrlKey && evt.keyCode == 51) {
+        if (self.enableTimer()) {
+          self.time = 1500;
+          self.initial = 1500;
+        }
+      }
+    });
+
   },
   filters: {
     minutesAndSeconds() {
@@ -51,8 +82,8 @@ new Vue({
         } else if (this.time === 0 && this.breaktime === true) {
           this.started = false;
           this.breaktime = false;
-          this.time = 1500;
-          this.initial = 1500;
+          this.time = 10;
+          this.initial = 10;
           this.showNotification(false);
           beeps.play();
           clearInterval(this.interval);
@@ -65,14 +96,26 @@ new Vue({
       this.started = false;
     },
 
-    showNotification: function(complete) {
+    enableTimer() {
+      let self = this;
+      let enableToChangeTimer = (self.started === false && self.breaktime === false);
+
+      if (!enableToChangeTimer) {
+        self.message[0] = 'Impossible to change the "timer" while the Pomodoro or Breaktime happens!';
+        self.showNotification(true);
+        self.message[0] = 'Pomodoro Complete';
+        return false;
+      }
+      return true;
+    },
+    showNotification(complete) {
       let message = complete ? this.message[0] : this.message[1];
 
       notifier.notify({
-        'title': 'Pomodoro App',
-        'message': '\n'+message,
-        'icon': path.join(__dirname, 'pomodoro-app-icon.png'),
-        'time': 3000,
+        title: 'Pomodoro App',
+        message: '\n'+message,
+        icon: path.join(__dirname, 'pomodoro-app-icon.png'),
+        time: 3000,
       });
     }
   }

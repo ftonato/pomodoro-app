@@ -1,6 +1,6 @@
 {
   "name": "Pomodoro-App",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A minimal Pomodore technique application to help you control your focus.",
   "main": "main.js",
   "scripts": {
