@@ -1,26 +1,36 @@
 const gulp = require('gulp');
-const minifycss = require('gulp-minify-css');
+const cleanCSS = require('gulp-clean-css');
 const rename = require('gulp-rename');
 const clean = require('gulp-clean');
-const compiler = require('google-closure-compiler-js').gulp();
+const sourcemaps = require('gulp-sourcemaps');
+const concat = require('gulp-concat');
+const babel = require('gulp-babel');
+const uglify = require('gulp-uglify');
+const pump = require('pump');
 
 gulp.task('css', function() {
   return gulp.src('src/css/main.css')
+    .pipe(sourcemaps.init())
     .pipe(rename({ suffix: '.min' }))
-    .pipe(minifycss())
+    .pipe(cleanCSS())
+    .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('dist/css'));
 });
 
-gulp.task('js', function() {
-  return gulp.src('src/js/*.js', {base: './'})
-    .pipe(compiler({
-      languageIn: 'ECMASCRIPT6',
-      languageOut: 'ECMASCRIPT5',
-      compilationLevel: 'SIMPLE',
-      jsOutputFile: 'main.min.js',
-      createSourceMap: true,
-    }))
-    .pipe(gulp.dest('dist/js'));
+gulp.task('js', function(cb) {
+  pump([
+    gulp.src('src/js/*.js', {base: './'}),
+    sourcemaps.init(),
+    babel({
+      presets: ['@babel/env']
+    }),
+    concat('main.min.js'),
+    uglify(),
+    sourcemaps.write('.'),
+    gulp.dest('dist/js')
+  ],
+  cb
+  );
 });
 
 gulp.task('clean', function() {
