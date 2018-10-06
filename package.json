@@ -4,7 +4,8 @@
   "description": "A minimal Pomodore technique application to help you control your focus.",
   "main": "main.js",
   "scripts": {
-    "start": "electron main.js"
+    "start": "electron main.js",
+    "test": "eslint ."
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,7 @@
   "homepage": "https://github.com/ftonato/pomodoro-app/#readme",
   "devDependencies": {
     "electron-prebuilt": "^0.37.4",
+    "eslint": "^5.6.1",
     "google-closure-compiler-js": "^20160828.0.1",
     "gulp": "^3.9.1",
     "gulp-clean": "^0.3.2",
