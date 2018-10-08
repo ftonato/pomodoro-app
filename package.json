@@ -1,11 +1,12 @@
 {
-  "name": "Pomodoro-App",
-  "version": "1.0.3",
+  "name": "pomodoro-app",
+  "version": "1.0.4",
   "description": "A minimal Pomodore technique application to help you control your focus.",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "test": "eslint ."
+    "test": "eslint .",
+    "dev": "gulp default"
   },
   "repository": {
     "type": "git",
@@ -22,7 +23,7 @@
     "@babel/preset-env": "^7.1.0",
     "electron": "^3.0.3",
     "eslint": "^5.6.1",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.0",
     "gulp-babel": "^8.0.0",
     "gulp-clean": "^0.4.0",
     "gulp-clean-css": "^3.10.0",
