@@ -18,7 +18,7 @@ gulp.task('css', () => {
     .pipe(gulp.dest('dist/css'));
 });
 
-gulp.task('js', () => {
+gulp.task('js', cb => {
   pump(
     [
       gulp.src('src/js/*.js', { base: './' }),
