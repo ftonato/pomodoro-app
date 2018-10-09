@@ -12,9 +12,9 @@ Uma simples aplicação da [técnica Pomodoro](https://en.wikipedia.org/wiki/Pom
 | -------- | ----------------------------- |
 | Ctrl + S | Iniciar cronômetro            |
 | Ctrl + R | Parar cronômetro              |
-| Ctrl + 1 | Definir cronômetro para 00:05 |
-| Ctrl + 2 | Definir cronômetro para 00:10 |
-| Ctrl + 3 | Definir cronômetro para 00:25 |
+| Ctrl + 1 | Definir cronômetro para 05:00 |
+| Ctrl + 2 | Definir cronômetro para 10:00 |
+| Ctrl + 3 | Definir cronômetro para 25:00 |
 
 > Se o cronômetro estiver em execução ou no tempo de interrupção, você não poderá alterar o tempo do pomodoro.
 
