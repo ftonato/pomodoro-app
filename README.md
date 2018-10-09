@@ -8,6 +8,20 @@ A minimal [Pomodore technique](https://en.wikipedia.org/wiki/Pomodoro_Technique)
 
 ![](pomodoro-app.gif)
 
+Keyboard shortcuts
+=======
+
+| Combination | Description |
+|:-----------:|-------------|
+|`Ctrl + s`   |Start timer  |
+|`Ctrl + r`   |Pause timer  |
+|`Ctrl + 1`   |Set timer at 5 minutes |
+|`Ctrl + 2`   |Set timer at 10 minutes|
+|`Ctrl + 3`   |Set timer at 25 minutes|
+
+**NOTE**
+If the timer is running or in breaktime, you cannot change the pomodoro time.
+
 ## Contributing
 1. [Follow this guide](CONTRIBUTING.md)
 2. Fork it: (https://github.com/ftonato/pomodoro-app/)
