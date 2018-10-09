@@ -4,7 +4,7 @@
   "description": "A minimal Pomodore technique application to help you control your focus.",
   "main": "main.js",
   "scripts": {
-    "start": "electron .",
+    "start": "rm -rf ./dist && npm run dev && electron .",
     "test": "eslint .",
     "dev": "gulp default"
   },
