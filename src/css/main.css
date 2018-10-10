@@ -1,3 +1,10 @@
+:root {
+  --default-brand-color: #fff;
+  --main-brand-color: #4c9ed9;
+  --secondary-brand-color: #ec008c;
+  --shell-brand-color: #555;
+}
+
 /* reset */
 [class*=column-]
 {
@@ -9,8 +16,8 @@ body
   height: 100vh;
   margin: 0;
 
-  color: #fff;
-  background-color: #4c9ed9;
+  color: var(--default-brand-color);
+  background-color: var(--main-brand-color);
 }
 
 .timer .title
@@ -26,7 +33,7 @@ body
   height: 8px;
   margin: 20px auto;
 
-  background: #555;
+  background-color: var(--shell-brand-color);
 }
 
 .shell .progressbar
@@ -35,20 +42,9 @@ body
 
   height: 30px;
 
-  background: #ec008c;
+  background-color: var(--secondary-brand-color)
 }
 
-input
-{
-  font-size: 20px;
-
-  margin: 0 10px;
-  padding: 5px;
-
-  color: white;
-  border: none;
-  background: #69c;
-}
 .button
 {
   display: inline-block;
@@ -59,13 +55,13 @@ input
   -o-transition: border-color .3s, opacity .3s;
   transition: border-color .3s, opacity .3s;
 
-  border-bottom: 2px solid #fff;
+  border-bottom: 2px solid var(--default-brand-color);
   background-color: transparent;
 }
 .button:hover,
 .button:focus
 {
-  border-color: #ec008c;
+  border-color: var(--secondary-brand-color);
   background-color: transparent;
 }
 
@@ -75,7 +71,7 @@ input
   padding-top: .5em;
   padding-bottom: .5em;
 
-  background-color: #fff;
+  background-color: var(--default-brand-color);
 }
 .social_icon
 {
@@ -93,30 +89,19 @@ input
   transition: opacity .5s;
   vertical-align: middle;
 
-  opacity: .5;
+  opacity: .6;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
-  background-color: #ccc;
-  background-color: green;
+  background-color: var(--default-brand-color);
 }
 .social_icon:hover,
 .social_icon:focus
 {
   opacity: 1;
 }
-.social_icon.facebook
-{
-  background-color: #36609f;
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAGtJREFUeNpiYBgFo2AUjAIywf///w2A+P5/VLCfng5At5x+DoD6/v9AOsABzeIAcs1iopKbPtAz7vf/xw32D1QIMAx0FMDAA3rlgAK0oC+AJkyFgcoFDoMlCkYdMOqAoeeAUTAKRsEoAAgwAMKaq5opUgbyAAAAAElFTkSuQmCC);
-  background-repeat: no-repeat;
-  background-position: 0 0;
-}
 
-.social_icon.twitter
-{
-  background-color: #2aa9e0;
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAN1JREFUeNpiYBgFo2AUjIIBBozUMOT///8OQMoByn3AyMi4ACYOZB+g1HADIJ6PR77/PyY4D8TvgTiBGr5rgBq6H4gF0OQU/uMH+6nhgAQkA99DHSQAC2I8lp9HdzC5DhCAWozNgv14HNBAjPksRKgpwCFuQEDfBwYqpXCD/+QBA6rlVVAuINHy+8SazUSkuokkBulCqpdY0ERHlO+pkvpx5IYGHDkCOZsa0MryAALZjmaWE/L1f2giJSvYGUlwSAA07/NDhT6CKh4g3gCscD4wjIJRMApGwVAFAAEGAJPv9Eljp59YAAAAAElFTkSuQmCC);
-  background-repeat: no-repeat;
-  background-position: 0 0;
+.float-right {
+  position: absolute;
+  right: .5rem;
 }
