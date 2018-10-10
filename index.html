@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Pomodoro App</title>
+  <title>Pomodoro</title>
 
   <meta property="og:url" content="https://github.com/ftonato/pomodoro-app">
   <meta property="og:type" content="website">
@@ -24,15 +24,21 @@
 
     <!-- Share and help us spread the word. -->
     <header class="header column-12 text-center">
-      <a class="social_icon twitter" href="https://twitter.com/intent/tweet?text=Hey there, I am using Pomodoro App to help me control my focus.&amp;url=https://github.com/ftonato/pomodoro-app&amp;related=ftonato" rel="nofollow" title="Share on Twitter"></a>
-      <a class="social_icon facebook" href="https://facebook.com/sharer.php?u=https://github.com/ftonato/pomodoro-app/" rel="nofollow" title="Share on Facebook"></a>
+      <a class="social_icon" href="https://twitter.com/intent/tweet?text=Hey there, I am using Pomodoro App to help me control my focus.&amp;url=https://github.com/ftonato/pomodoro-app&amp;related=ftonato" rel="nofollow" title="Share on Twitter">
+        <img src="./src/images/twitter-icon.svg" alt="Twitter">
+      </a>
+      <a class="social_icon" href="https://facebook.com/sharer.php?u=https://github.com/ftonato/pomodoro-app/" rel="nofollow" title="Share on Facebook">
+        <img src="./src/images/facebook-icon.svg" alt="Facebook">
+      </a>
+
+      <a class="social_icon float-right" href="log.html" title="Backlog">
+        <img src="./src/images/log-icon.svg" alt="Backlog">
+      </a>
     </header>
 
-    <div class="column-3"></div>
-
-    <div class="column-6 text-center">
+    <div class="column-12 text-center">
       <div class="timer">
-        <h1 class="title" v-show="!breaktime">Pomodoro App</h1>
+        <h1 class="title" v-show="!breaktime">Pomodoro</h1>
         <h1 class="title" v-show="breaktime">Breaktime!</h1>
         
         <div>

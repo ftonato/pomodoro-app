@@ -1,12 +1,9 @@
-/*global Vue*/
-/*eslint no-undef: "error"*/
-/*eslint-env browser*/
-
 const notifier = require('node-notifier');
 const path = require('path');
-const _NAME = 'Pomodoro App';
+const _NAME = 'Pomodoro';
 const _ICON = 'pomodoro-app-icon.png';
 const _BEEP = new Audio('endbeep.wav');
+const repository = require('./src/js/repository.js');
 
 new Vue({
   el: '#app',
@@ -15,7 +12,8 @@ new Vue({
     initial: 1500,
     started: false,
     breaktime: false,
-    message: ['Pomodoro Complete', 'Breaktime Complete']
+    message: ['Pomodoro Completed', 'Breaktime Completed'],
+    backlog: repository.getItems() || []
   },
   ready() {
     window.addEventListener('keyup', event => {
@@ -42,6 +40,8 @@ new Vue({
           this.breaktime = true;
           this.time = 300;
           this.initial = 300;
+          repository.saveNewItem(this.message[0], this.initial);
+          this.updateBacklog();
           this.showNotification(true);
           _BEEP.play();
           clearInterval(this.interval);
@@ -50,6 +50,8 @@ new Vue({
           this.breaktime = false;
           this.time = 1500;
           this.initial = 1500;
+          repository.saveNewItem(this.message[1], this.initial);
+          this.updateBacklog();
           this.showNotification(false);
           _BEEP.play();
           clearInterval(this.interval);
@@ -69,7 +71,7 @@ new Vue({
       if (!enableToChangeTimer) {
         self.message[0] = 'Impossible to change the "timer" while the Pomodoro or Breaktime happens!';
         self.showNotification(true);
-        self.message[0] = 'Pomodoro Complete';
+        self.message[0] = 'Pomodoro Completed';
         return false;
       }
       return true;
@@ -119,6 +121,10 @@ new Vue({
         seconds = '00';
       }
       return { minutes, seconds };
+    },
+
+    updateBacklog() {
+      this.blacklog = repository.getItems();
     }
   }
 });
