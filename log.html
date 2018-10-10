@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <link href='https://fonts.googleapis.com/css?family=Kanit:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://s3-us-west-2.amazonaws.com/jbivenscp/bitzy.min.css">
+  <link rel="stylesheet" href="dist/css/main.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.20/vue.min.js"></script>
+</head>
+
+<body id="app">
+  <div class="column-6 text-center">
+    <h3>Backlog</h3>
+    <ul v-for="(index, item) in backlog">
+      <h5>{{ index }}</h5>
+      <li v-for="value in item">
+        <p>{{ value.title }} - {{ value.currentTime }}</p>
+      </li>
+    </ul>
+  </div>
+
+  <script src="dist/js/main.min.js"></script>
+</body>
+
+</html>

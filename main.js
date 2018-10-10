@@ -35,3 +35,9 @@ app.on('activate', () => {
     createWindow();
   }
 });
+
+app.on('browser-window-created', function(e, window) {
+  window.setMenu(null);
+  // Open the DevTools.
+  // window.openDevTools();
+});
